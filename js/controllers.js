@@ -19,14 +19,11 @@ var phoneCatApp = angular.module('catApp', ['ngRoute']);
 });
 
 
-
-
 phoneCatApp.controller('mainCtrl', function ($rootScope,$scope,$http,$location) {
   $rootScope.header = "Meow Search";
   $scope.enter = function() {
      $location.path('/cats');
   }
-
 });
 
 
@@ -47,6 +44,22 @@ phoneCatApp.controller('catCtrl', function ($rootScope,$scope,$http,$location) {
 
 });
 
+phoneCatApp.directive('focus', function($timeout) {
+  return {
+    scope : {
+     trigger : '@focus'
+    },
+    link : function(scope, element) {
+      scope.$watch('trigger', function(value) {
+        if (value === "true") {
+          $timeout(function() {
+            element[0].focus();
+          });
+        }
+      });
+    }
+  };
+}); 
 
 
 
