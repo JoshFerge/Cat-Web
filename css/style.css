@@ -1,0 +1,36 @@
+body {background-color:steelblue; width:100%;}
+
+
+html,body{width:100%;height:100%}
+
+.logo {width:100px ;display:block;}
+.logo-small {width:50px;display: inline-block; cursor:pointer;}
+.cat-view-search {
+    height: 40px;
+   
+    /*width: 100%;*/
+    font-size:20px;
+
+    transition: all 0.3s ease-out;
+
+    padding: 5px;
+
+    
+
+}
+.front-search {
+    margin-top:250px;
+	display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+#search-div {
+    text-align:center;
+    display:block;
+}
+
+.cat-image {
+    width:200px;
+    height:200px;
+}

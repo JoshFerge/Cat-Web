@@ -1,0 +1,18 @@
+{
+  "name": "cat-app",
+  "authors": [
+    "Joshua Ferge <joshua.ferge@colorado.edu>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
