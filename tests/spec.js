@@ -1,6 +1,7 @@
 describe('Cat Search', function() {
   beforeEach(function() {
-    browser.get('http:localhost:8080');
+    browser.get('http:joshferge.github.io/cat-web');
+    
   });
 
   it('Correct Title', function() {
@@ -30,7 +31,10 @@ describe('Cat Search', function() {
         for (var i = 0; i < imgs.length; i++) {
             if (imgs[i].naturalWidth > 0) {
                 loaded = loaded + 1;
-            };
+            }
+            else {
+              console.log(imgs[i].src)
+            }
         };
         callback(imgs.length - loaded);
      }).then(function (brokenImagesCount) {
@@ -42,19 +46,28 @@ describe('Cat Search', function() {
     var search = element(by.model('user.name'));
     search.sendKeys(1);
     element(by.id('submit')).click();
+    
 
-    browser.sleep(1000)
+    browser.sleep(2000)
     browser.executeAsyncScript(function (callback) {
-        var imgs = document.getElementsByTagName('img'),
-            loaded = 0;
+        var imgs = document.getElementsByTagName('img'), loaded = 0;
+        console.log(imgs.length)
+        console.log("vacon")
+        var broken = [];
+        
         for (var i = 0; i < imgs.length; i++) {
+            console.log("Test")
             if (imgs[i].naturalWidth > 0) {
                 loaded = loaded + 1;
+            }
+            else {
+              broken.push(imgs[i].src);
             };
         };
-        callback(imgs.length - loaded);
+        callback(broken);
      }).then(function (brokenImagesCount) {
-        expect(brokenImagesCount).toBe(0);
+        console.log(brokenImagesCount);
+        expect(brokenImagesCount.length).toBe(1);
     });
   });
 
