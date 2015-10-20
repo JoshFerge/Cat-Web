@@ -1,7 +1,7 @@
 <img ng-click="goHome()" class="logo-small" src="images/logo.png"/>
 <form ng-submit="getCats()" >
-       <input class="cat-view-search" type="text" name="userName" ng-model="user.name" required>
-     <input type="submit" id="submit" value="Submit" />
+       <input class="cat-view-search" focus="true" type="text" name="userName" ng-model="user.name" required>
+     <input class="btn btn-success" type="submit" id="submit" value="Meow!" />
 </form>
 
 <span ng-repeat="url in catURLs"><img ng-src="{{url}}"> </img></span>
