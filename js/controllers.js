@@ -38,7 +38,7 @@ phoneCatApp.controller('catCtrl', function ($rootScope,$scope,$http,$location) {
   }
 
   $scope.getCats = function() {
-    $http.get("http://localhost:3000").success(function(response) {
+    $http.get("http://cat-server.herokuapp.com/").success(function(response) {
       $scope.catURLs = response.catURLs;
     });
   }
